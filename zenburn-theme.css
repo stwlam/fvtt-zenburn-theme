@@ -1,0 +1,39 @@
+code-mirror {
+  --active-line-color: #393939;
+  --color-text-selection-bg: #2b2b2b;
+  --gutter-background-color: #4f4f4f;
+  --gutter-border-color: #636363;
+  --input-background-color: #3f3f3f;
+  --input-focus-text-color: #e0e0c9;
+  --input-text-color: #dcdccb;
+  --syntax-boolean-color: #bfebbd;
+  --syntax-brace-color: var(--input-text-color);
+  --syntax-class-name-color: var(--syntax-func-name-color);
+  --syntax-comment-color: #7f9f7f;
+  --syntax-func-name-color: #93e0e3;
+  --syntax-keyword-color: #f0dfaf;
+  --syntax-link-color: var(--syntax-keyword-color);
+  --syntax-method-name-color: var(--syntax-func-name-color);
+  --syntax-number-color: var(--syntax-boolean-color);
+  --syntax-operator-color: var(--input-text-color);
+  --syntax-parenthesis-color: var(--syntax-brace-color);
+  --syntax-prop-def-color: #dfaf8d;
+  --syntax-prop-name-color: var(--syntax-prop-def-color);
+  --syntax-separator-color: var(--input-text-color);
+  --syntax-square-bracket-color: var(--syntax-brace-color);
+  --syntax-string-color: #cc9393;
+  --syntax-tag-color: var(--syntax-class-name-color);
+  --syntax-var-name-color: var(--input-text-color);
+
+  .cm-gutterElement {
+    color: var(--syntax-comment-color);
+
+    &.cm-activeLineGutter {
+      background-color: var(--input-background-color);
+    }
+  }
+
+  .stx-keyword {
+    font-weight: bold;
+  }
+}

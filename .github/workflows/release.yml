@@ -1,0 +1,38 @@
+name: Mint Release
+
+on:
+  workflow_dispatch:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract Version Number
+        run: |
+          MODULE_VERSION=$(grep -oP '(?<="version": ")[^"]+' ./module.json | tr -d '\n')
+          echo "moduleVersion=$MODULE_VERSION" >> $GITHUB_ENV
+
+      - name: Update Links
+        id: sub_manifest_link_version
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: "module.json"
+        env:
+          download: https://github.com/${{github.repository}}/releases/download/release-${{env.moduleVersion}}/module.zip
+
+      - run: zip -r ./module.zip module.json zenburn-theme.css README.md LICENSE
+
+      - name: Create Version Release
+        id: create_version_release
+        uses: ncipollo/release-action@v1
+        with:
+          name: ${{env.moduleVersion}}
+          allowUpdates: false
+          draft: false
+          prerelease: false
+          token: ${{secrets.GITHUB_TOKEN}}
+          artifacts: "./module.json, ./module.zip"
+          tag: release-${{env.moduleVersion}}
