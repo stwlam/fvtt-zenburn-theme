@@ -1,0 +1,34 @@
+code-mirror {
+    --active-line-color: #393939;
+    --gutter-background-color: #505050;
+    --input-background-color: #404040;
+    --input-text-color: #e0e0c9;
+    --syntax-boolean-color: #c5e2fa;
+    --syntax-brace-color: #da70cd;
+    --syntax-class-name-color: #9cdbde;
+    --syntax-comment-color: #779a74;
+    --syntax-func-name-color: #9cdbde;
+    --syntax-keyword-color: #eadfaf;
+    --syntax-method-name-color: var(--syntax-func-name-color);
+    --syntax-number-color: #b4d9b4;
+    --syntax-operator-color: var(--input-text-color);
+    --syntax-parenthesis-color: #ffd700;
+    --syntax-prop-def-color: #dfb07b;
+    --syntax-prop-name-color: var(--syntax-prop-def-color);
+    --syntax-square-bracket-color: #179fff;
+    --syntax-string-color: #d49e9e;
+    --syntax-var-name-color: var(--input-text-color);
+
+    .cm-gutterElement {
+      color: #717171;
+
+      &.cm-activeLineGutter {
+        background-color: transparent;
+        color: #9e9e9e;
+      }
+    }
+
+    .stx-keyword {
+      font-weight: bold;
+    }
+}

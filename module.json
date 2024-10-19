@@ -1,0 +1,14 @@
+{
+  "id": "zenburn-editor-theme",
+  "title": "Zenburn Editor Theme",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "styles": [
+    "zenburn.css"
+  ],
+  "description": "The famous Zenburn theme, originally a color scheme for Vim. This particular flavor comes from the port for Emacs. It is a low-contrast theme, not quite in the \"dark\" or \"light\" categories.",
+  "url": "https://github.com/stwlam/fvtt-zenburn-theme"
+}
